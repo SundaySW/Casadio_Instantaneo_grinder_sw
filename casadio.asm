@@ -22,6 +22,11 @@ REG12   EQU 0x29
 REG9	EQU 0x2A
 REGA	EQU 0x2B
 
+bit1	EQU 0x3
+bit2	EQU 0x4
+bit3	EQU 0x6
+bit4	EQU 0x7
+	
 SEG1	EQU 0x40	    ;display segments data storage to show
 SEG2	EQU 0x41
 SEG3	EQU 0x42
@@ -107,7 +112,7 @@ continueISR
 ;********************************************************
 ;MACROSes
 ;********************************************************
-;Increment for deñ format through 4 digits
+;Increment for deÃ± format through 4 digits
 plus	macro	stage
     while(stage < 5)
 	incf    SEG#v(stage),F
@@ -122,7 +127,7 @@ plus	macro	stage
     endw
 endm
 ;******************************************************** 
-;Decrement for deñ format through 4 digits
+;Decrement for deÃ± format through 4 digits
 minus	macro	stage
 	if(stage == 1)
 	    bcf	    STATUS,Z
